@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ComfyUIBox from './ComfyUIBox';
+import workflowJson1 from './hackathon.json';
+import workflowJson2 from './blur-test.json';
+// import workflowJson3 from './workflow3.json';
 
-function App() {
+const App = () => {
+  const comfyUIUrl = 'http://127.0.0.1:8188/'; // Replace with your actual ComfyUI URL
+  // const [currentWorkflow, setCurrentWorkflow] = useState(workflowJson1);
+
+  const workflow1 = workflowJson1;
+  const workflow2 = workflowJson2;
+
+  const loadWorkflow = (workflow) => {
+    const iframe = document.getElementById('comfyUIIframe');
+    iframe.contentWindow.postMessage({ type: 'loadGraphData', data: workflow }, '*');
+  };
+
+  const handleLoadWorkflow1 = () => {
+    loadWorkflow(workflow1);
+  };
+
+  const handleLoadWorkflow2 = () => {
+    loadWorkflow(workflow2);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ComfyUIBox comfyUIUrl={comfyUIUrl} />
+      <button onClick={handleLoadWorkflow1}>Load Workflow 1</button>
+      <button onClick={handleLoadWorkflow2}>Load Workflow 2</button>
     </div>
   );
-}
+};
 
 export default App;

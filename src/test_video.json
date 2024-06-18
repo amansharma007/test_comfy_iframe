@@ -1,0 +1,39 @@
+{
+  "10": {
+    "inputs": {
+      "local_url": "",
+      "framerate": "original",
+      "resize_by": "none",
+      "size": 512,
+      "images_limit": 0,
+      "batch_size": 0,
+      "starting_frame": 0,
+      "autoplay": true,
+      "choose file to upload": "image"
+    },
+    "class_type": "LoadVideo [n-suite]",
+    "_meta": {
+      "title": "LoadVideo [🅝-🅢🅤🅘🅣🅔]"
+    }
+  },
+  "11": {
+    "inputs": {
+      "METADATA": [
+        "10",
+        2
+      ],
+      "SaveVideo": false,
+      "SaveFrames": false,
+      "filename_prefix": "video",
+      "CompressionLevel": 2,
+      "images": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "SaveVideo [n-suite]",
+    "_meta": {
+      "title": "SaveVideo [🅝-🅢🅤🅘🅣🅔]"
+    }
+  }
+}
