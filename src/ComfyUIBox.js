@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const ComfyUIBox = ({ comfyUIUrl, workflow }) => {
-  const comfyFrame = useRef(null);
+const ComfyUIBox = ({ comfyUIUrl, comfyFrame }) => {
+  // const comfyFrame = useRef(null);
 
   // useEffect(() => {
   //   const iframe = comfyFrame.current;
@@ -16,7 +16,7 @@ const ComfyUIBox = ({ comfyUIUrl, workflow }) => {
     <div style={{ border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
       <iframe
         src={comfyUIUrl}
-        // ref={comfyFrame}
+        ref={comfyFrame}
         style={{ width: '100%', height: '600px', border: 'none' }}
         title="ComfyUI"
         name="ComfyUI"
