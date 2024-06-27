@@ -10,7 +10,12 @@ const getRepoNestedContent = async () => {
 
   try {
     const response = await axios.get(
-      `https://api.github.com/repos/supersver/test/contents/test/workflow.json?t=${randomValue}`
+      `https://api.github.com/repos/supersver/test/contents/test/workflow.json?t=${randomValue}`,
+      {
+        headers: {
+          authorization: localStorage.getItem("token") || "",
+        },
+      }
     );
     return response.data;
   } catch (error) {
