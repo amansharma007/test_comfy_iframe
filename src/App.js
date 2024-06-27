@@ -13,9 +13,7 @@ const getRepoNestedContent = async () => {
       `https://api.github.com/repos/supersver/test/contents/test/workflow.json?t=${randomValue}`,
       {
         headers: {
-          authorization:
-            localStorage.getItem("token") ||
-            "",
+          authorization: localStorage.getItem("token") || "",
         },
       }
     );
