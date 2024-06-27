@@ -15,7 +15,7 @@ const getRepoNestedContent = async () => {
         headers: {
           authorization:
             localStorage.getItem("token") ||
-            "Bearer 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",
+            "",
         },
       }
     );
